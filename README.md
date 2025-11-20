@@ -65,4 +65,21 @@ An Entity Relationship (ER) model helps me visually show how my data is organize
 * These entities currently do **not** have relationships with other tables.
 * They store admin-managed content and function as standalone entities in the database design.
 
-5.
+## **5. Data Flow Explanation**
+
+This section explains how data flows between the front end of my website (HTML/CSS/JavaScript) and the back end (PHP and MySQL).
+
+### **Example 1: User Registration**
+
+* A user fills out the sign-up form on the website.
+* When the form is submitted, the data (name, email, password) is sent to a PHP script using POST.
+* PHP makes sure the information is valid, then converts the password into a secure hash so nobody can read it, and then saves the user into the database.
+* If the data is valid, the user is redirected to the login page to sign in..
+
+### **Example 2: Creating a User Post**
+
+* A logged-in user fills out the “Create Post” form with a title, content, and optional media.
+* After submitting, the form data is sent to a PHP script.
+* PHP validates the input and saves the new post in the **posts** table with the user’s ID.
+* The post remains pending until the admin approves it.
+* The user is then redirected back to their posts page.
