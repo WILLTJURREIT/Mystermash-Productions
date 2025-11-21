@@ -12,6 +12,7 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/animations.css" />
 </head>
 
 <body>
@@ -20,8 +21,8 @@
     <header class="site-header">
         <div class="container nav-wrap">
             <a href="index.php" class="logo">
-                <img src="images/mystermash-logo.png" alt="MysterMash Productions logo" />
-                <span class="logo-text">
+                <img src="images/mystermash-logo.png" alt="MysterMash Productions logo" class="mm-logo-animate" />
+                <span class=" logo-text">
                     <span>MysterMash</span>
                     <span>Productions</span>
                 </span>

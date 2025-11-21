@@ -131,8 +131,8 @@ img {
   position: absolute;
   left: 0;
   bottom: -0.35rem;
-  width: 0;
-  height: 2px;
+  width: 0; /*hides line initially */
+  height: 4px;
   background: linear-gradient(
     90deg,
     var(--mm-accent-fire),
@@ -141,6 +141,7 @@ img {
   transition: width 0.2s ease;
 }
 
+/* un-hides line */
 .main-nav a:hover::after {
   width: 100%;
 }
