@@ -334,3 +334,76 @@ img {
     justify-content: space-between;
   }
 }
+
+/* VIDEOS PAGE =========================== */
+
+.page-header {
+  padding-block: 3rem 1rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: var(--mm-accent-gold);
+}
+
+.page-subtext {
+  color: var(--mm-text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.videos-section {
+  padding-block: 2rem 4rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.video-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--mm-border-subtle);
+  background: black;
+}
+
+.video-thumb iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-card {
+  background: var(--mm-bg-elevated);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--mm-border-subtle);
+}
+
+.video-title {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--mm-text-main);
+}
+
+@media (min-width: 640px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
