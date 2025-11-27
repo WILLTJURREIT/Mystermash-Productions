@@ -10,8 +10,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Epunda+Sans:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="/Mystermash-Productions/public/css/styles.css">
+    <link rel="stylesheet" href="/Mystermash-Productions/public/css/animations.css" />
 </head>
 
 <body>

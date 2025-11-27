@@ -48,9 +48,9 @@ My project is an Online Content Hub for  **MysterMash Productions** , built to o
 
 An Entity Relationship (ER) model helps me visually show how my data is organized and how the different parts of my database connect to each other. In my ERD for the  **MysterMash Productions Content Hub** , I included four main entities: users, posts, tutorials, and quotes.
 
-### **Figure: ERD**
+### Figure: ERD
 
-![1763496272588](image/README/1763496272588.png)
+![Database Design](images/database-design.png)
 
 ## **Relationships**
 
