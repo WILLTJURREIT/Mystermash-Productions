@@ -50,7 +50,7 @@ An Entity Relationship (ER) model helps me visually show how my data is organize
 
 ### Figure: ERD
 
-![Database Design](images/database-design.png)
+![Database Design](public/images/database-design.png)
 
 ## **Relationships**
 
