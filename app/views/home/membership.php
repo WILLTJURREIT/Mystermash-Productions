@@ -10,8 +10,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Epunda+Sans:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="/Mystermash-Productions/public/css/styles.css" />
+    <link rel="stylesheet" href="/Mystermash-Productions/public/css/animations.css" />
 </head>
 
 <body>
@@ -62,10 +62,10 @@
                 <h2 class="plan-title">Standard Member</h2>
                 <p class="plan-price">$5 / month</p>
                 <ul class="plan-features">
-                    <li>✔ All Free Features</li>
-                    <li>✔ Early Access Videos</li>
-                    <li>✔ Private Community Chat</li>
-                    <li>✔ Monthly Live Q&A</li>
+                    <li>All Free Features</li>
+                    <li>Early Access Videos</li>
+                    <li>Private Community Chat</li>
+                    <li>Monthly Live Q&A</li>
                 </ul>
                 <a href="signup.php" class="btn-primary">Join Now</a>
             </div>
@@ -73,10 +73,10 @@
                 <h2 class="plan-title">Premium Member</h2>
                 <p class="plan-price">$10 / month</p>
                 <ul class="plan-features">
-                    <li>✔ Everything in Standard</li>
-                    <li>✔ Behind-the-Scenes Content</li>
-                    <li>✔ Exclusive Tutorials</li>
-                    <li>✔ Priority Support</li>
+                    <li>Everything in Standard</li>
+                    <li>Behind-the-Scenes Content</li>
+                    <li>Exclusive Tutorials</li>
+                    <li>Priority Support</li>
                 </ul>
                 <a href="signup.php" class="btn-primary">Go Premium</a>
             </div>

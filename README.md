@@ -83,3 +83,41 @@ This section explains how data flows between the front end of my website (HTML/C
 * PHP validates the input and saves the new post in the **posts** table with the user’s ID.
 * The post remains pending until the admin approves it.
 * The user is then redirected back to their posts page.
+
+### **Example 3: Admin Adding a Tutorial** 
+
+* Admin fills out the Add Tutorial, form with title, description, and video URL.
+* Data is submitted by POST to PHP.
+* PHP validates that all required fields are filled.
+* If valid, PHP will insert a new row into the tutorials table.
+* Admin is redirected back to the tutorial list.
+* The new tutorial is displayed on the Tutorials page.
+
+# 6. UI Design 
+
+These pages are styled using custom CSS and Google Fonts to match the MysterMash brand theme.
+
+### **Pages Designed**
+
+- **Home Page:** Hero section, daily quote card, navigation bar, footer.
+- **Videos Page:** Embedded motivational videos.
+- **Membership Page:** Information on joining the community.
+- **Login / Sign-Up Pages:** Basic layout for authentication flow.
+
+These pages represent the user-facing portion of the platform and demonstrate the intended visual style.
+
+# 7. User Interaction Flow
+
+Below are the flow diagrams showing how both users and admins navigate through the platform.
+
+### **Admin Interaction Flow**
+
+![Admin Flow Diagram](public/images/Admin.jpg)
+
+### **User Interaction Flow**
+
+![User Flow Diagram](public/images/User.jpg)
+
+# 8. MVC Folder Structure (Setting up for Milestone 3)
+
+The project has been reorganized into an MVC (Model–View–Controller) structure.
