@@ -18,6 +18,7 @@ class AuthController
     // Show login page (I will need to still add this view since I have not created one yet)
     public function login()
     {
+        echo "<script>alert('Login controller reached');</script>";
         include __DIR__ . '/../views/auth/login.php';
     }
 
@@ -34,6 +35,8 @@ class AuthController
     // Handling user registration -POST
     public function doRegister()
     {
+        $_SESSION['flash'] = 'doRegister() has been called';
+
         // Trims input to remove extra whitespace
         $name = trim($_POST['name'] ?? '');
         $email = strtolower(trim($_POST['email'] ?? ''));
@@ -70,4 +73,46 @@ class AuthController
     }
 
 
+    // Handle login 
+
+    public function authenticate()
+    {   // change to lowercase, trim,  using the post method, and store into a reference. 
+        $email = strtolower(trim($_POST['email'] ?? ''));
+        $pass = $_POST['password'] ?? '';
+
+        // Look up the user by email
+        $user = User::findByEmail($this->pdo, $email);
+
+        // Validate credentials and account status
+        if (
+            !$user ||
+            !password_verify($pass, $user['password']) ||
+            $user['status'] !== 'active'
+        ) {
+            $_SESSION['flash'] = 'Incorrect login info.';
+            header('Location: index.php?controller=auth&action=login');
+            exit;
+        }
+
+        // Store user in session
+        $_SESSION['user'] = $user;
+
+        // redirect based on role of the user
+        if ($user['role'] === 'admin') {
+            header('Location: index.php?controller=admin&action=dashboard');
+        } else {
+            header('Location: index.php?controller=user&action=dashboard');
+        }
+
+        exit;
+    }
+
+    // Logout function
+    public function logout()
+    {
+        session_destroy();
+        //re direct to the home page.
+        header('Location: index.php');
+        exit;
+    }
 }
