@@ -30,9 +30,10 @@
 
             <nav class="main-nav">
                 <a href="index.php" class="active">Home</a>
-                <a href="videos.php">Videos</a>
-                <a href="membership.php">Membership</a>
-                <a href="contact.php">Contact</a>
+                <a href="index.php?controller=main&action=tutorials">Tutorials</a>
+                <a href="index.php?controller=main&action=membership">Membership</a>
+                <a href="index.php?controller=main&action=about">About</a>
+                <a href="index.php?controller=main&action=contact">Contact</a>
                 <a href="login.php" class="nav-cta">Log In</a>
             </nav>
 
