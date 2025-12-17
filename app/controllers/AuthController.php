@@ -67,7 +67,7 @@ class AuthController
         // Store the user in session and this session will be running while the user is logged in. 
         $_SESSION['user'] = User::findById($this->pdo, $userId);
 
-        // redirect to user dashboard which is not built  at this point
+        // redirect to user dashboard
         header('Location: index.php?controller=user&action=dashboard');
         exit;
     }

@@ -14,5 +14,13 @@ class UserController
     public function dashboard()
     {
         requireLogin();
+        // here we must fetch the user's posts, store into variable,
+        $posts = Post::getByUser(
+            $this->pdo,
+            $_SESSION['user']['id']
+        );
+        include __DIR__ . '/../views/user/dashboard.php';
     }
+
 }
+
