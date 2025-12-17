@@ -21,7 +21,8 @@
     <header class="site-header">
         <div class="container nav-wrap">
             <a href="index.php" class="logo">
-                <img src="images/mystermash-logo.png" alt="MysterMash Productions logo" class="mm-logo-animate" />
+                <img src="/Mystermash-Productions/public/images/mystermash-logo.png
+" alt="MysterMash Productions logo" class="mm-logo-animate" />
                 <span class=" logo-text">
                     <span>MysterMash</span>
                     <span>Productions</span>
@@ -34,7 +35,7 @@
                 <a href="index.php?controller=main&action=membership">Membership</a>
                 <a href="index.php?controller=main&action=about">About</a>
                 <a href="index.php?controller=main&action=contact">Contact</a>
-                <a href="login.php" class="nav-cta">Log In</a>
+                <a href="index.php?controller=auth&action=login" class="nav-cta">Log In</a>
             </nav>
 
             <!-- Mobile menu button -->

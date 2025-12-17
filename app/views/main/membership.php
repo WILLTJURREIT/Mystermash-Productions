@@ -1,3 +1,4 @@
+<?php include __DIR__ . '/../../../includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,29 +16,6 @@
 </head>
 
 <body>
-
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="container nav-wrap">
-            <a href="index.php" class="logo">
-                <img src="images/mystermash-logo.png" class="mm-logo-animate" alt="MysterMash logo">
-                <span class="logo-text">
-                    <span>MysterMash</span>
-                    <span>Productions</span>
-                </span>
-            </a>
-
-            <nav class="main-nav">
-                <a href="index.php">Home</a>
-                <a href="videos.php">Videos</a>
-                <a href="membership.php" class="active">Membership</a>
-                <a href="contact.php">Contact</a>
-                <a href="login.php" class="nav-cta">Log In</a>
-            </nav>
-
-            <button class="nav-toggle">Menu</button>
-        </div>
-    </header>
     <section class="page-header">
         <div class="container">
             <h1>Membership Tiers</h1>
@@ -83,17 +61,7 @@
 
         </div>
     </section>
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <p>© 2025 MysterMash Productions. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">YouTube</a>
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-            </div>
-        </div>
-    </footer>
-
+    <?php include __DIR__ . '/../../../includes/footer.php'; ?>
 </body>
 
 </html>
