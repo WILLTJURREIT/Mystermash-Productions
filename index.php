@@ -7,6 +7,7 @@ require_once __DIR__ . '/app/controllers/AuthController.php';
 require_once __DIR__ . '/app/controllers/UserController.php';
 require_once __DIR__ . '/app/models/Post.php';
 require_once __DIR__ . '/app/controllers/PostController.php';
+require_once __DIR__ . '/app/controllers/AdminController.php';
 
 
 
@@ -22,6 +23,7 @@ $map = [
     'auth' => AuthController::class,
     'user' => UserController::class,
     'post' => PostController::class,
+    'admin' => AdminController::class,
 ];
 
 
@@ -38,6 +40,8 @@ if (!method_exists($instance, $action)) {
     echo 'Action not found';
     exit;
 }
+
+
 
 
 // Render the action

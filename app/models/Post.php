@@ -65,5 +65,22 @@ class Post
         ]);
     }
 
+    // Get all of the posts for admin use only
+    public static function getAll(PDO $pdo): array
+    {
+        $sql = "
+        SELECT posts.*, users.name AS author
+        FROM posts
+        JOIN users ON posts.user_id = users.id
+        ORDER BY posts.created_at DESC
+    ";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+
 }
 
