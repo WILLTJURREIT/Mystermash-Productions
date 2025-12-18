@@ -33,4 +33,37 @@ class Post
 
         return $stmt->fetchAll();
     }
+
+    // Update an existing post
+    public static function update(PDO $pdo, int $postId, int $userId, string $title, string $content)
+    {
+        $sql = "UPDATE posts
+            SET title = :title, content = :content
+            WHERE id = :id AND user_id = :user_id";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':title' => $title,
+            ':content' => $content,
+            ':id' => $postId,
+            ':user_id' => $userId,
+        ]);
+    }
+
+
+    // Delete a post
+
+    public static function delete(PDO $pdo, int $postId, int $userId)
+    {
+        $sql = "DELETE FROM posts
+            WHERE id = :id AND user_id = :user_id";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':id' => $postId,
+            ':user_id' => $userId,
+        ]);
+    }
+
 }
+

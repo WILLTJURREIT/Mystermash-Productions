@@ -38,4 +38,53 @@ class PostController
         header('Location: index.php?controller=user&action=dashboard');
         exit;
     }
+
+    // update a post
+    public function update()
+    {
+        requireLogin();
+
+        $postId = (int) ($_POST['id'] ?? 0);
+        $title = trim($_POST['title'] ?? '');
+        $content = trim($_POST['content'] ?? '');
+
+        if (!$postId || !$title || !$content) {
+            $_SESSION['flash'] = 'All fields are required.';
+            header('Location: index.php?controller=user&action=dashboard');
+            exit;
+        }
+
+        Post::update(
+            $this->pdo,
+            $postId,
+            $_SESSION['user']['id'],
+            $title,
+            $content
+        );
+
+        header('Location: index.php?controller=user&action=dashboard');
+        exit;
+    }
+
+
+    // delete a post
+    public function delete()
+    {
+        requireLogin();
+
+        $postId = (int) ($_GET['id'] ?? 0);
+
+        if ($postId) {
+            Post::delete(
+                $this->pdo,
+                $postId,
+                $_SESSION['user']['id']
+            );
+        }
+
+        header('Location: index.php?controller=user&action=dashboard');
+        exit;
+    }
+
 }
+
