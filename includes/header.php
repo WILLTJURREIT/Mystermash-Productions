@@ -36,6 +36,9 @@
                 <a href="index.php?controller=main&action=about">About</a>
                 <a href="index.php?controller=main&action=contact">Contact</a>
                 <a href="index.php?controller=auth&action=login" class="nav-cta">Log In</a>
+                <?php if (isAdmin()): ?>
+                    <a href="index.php?controller=admin&action=tutorials">Admin Tutorials</a>
+                <?php endif; ?>
             </nav>
 
             <!-- Mobile menu button -->

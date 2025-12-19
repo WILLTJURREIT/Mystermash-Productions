@@ -115,13 +115,5 @@ class AuthController
         header('Location: index.php');
         exit;
     }
-    public function posts()
-    {
-        requireAdmin();
-
-        $posts = Post::getAll($this->pdo);
-
-        include __DIR__ . '/../views/admin/posts.php';
-    }
 
 }

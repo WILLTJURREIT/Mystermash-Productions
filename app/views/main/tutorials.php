@@ -6,11 +6,39 @@
     </div>
 </section>
 
-<!-- VIDEO GRID -->
+<!-- VIDEO GRID (I kept the same grid layout and replaced the hard-coded video cards with a loop that pulls tutorials from the database.)-->
 <section class="videos-section">
     <div class="container video-grid">
+        <?php if (!empty($tutorials)): ?>
+            <?php foreach ($tutorials as $tutorial): ?>
+                <div class="video-card">
 
-        <!-- VIDEO CARD 1 -->
+                    <div class="video-thumb">
+                        <iframe src="<?= htmlspecialchars($tutorial['video_url']); ?>" allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+
+                    <h3 class="video-title">
+                        <?= htmlspecialchars($tutorial['title']); ?>
+                    </h3>
+
+                    <?php if (!empty($tutorial['description'])): ?>
+                        <p class="page-subtext">
+                            <?= htmlspecialchars($tutorial['description']); ?>
+                        </p>
+                    <?php endif; ?>
+
+                    <a class="btn-primary" href="<?= htmlspecialchars($tutorial['video_url']); ?>" target="_blank">
+                        Watch on YouTube
+                    </a>
+
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No tutorials available yet.</p>
+        <?php endif; ?>
+
+        <!-- VIDEO CARD 1
         <div class="video-card">
             <div class="video-thumb">
                 <iframe src="https://www.youtube.com/embed/BXJomPLsV-c" allowfullscreen loading="lazy"></iframe>
@@ -20,7 +48,7 @@
                 YouTube</a>
         </div>
 
-        <!-- VIDEO CARD 2 -->
+        VIDEO CARD 2 
         <div class="video-card">
             <div class="video-thumb">
                 <iframe src="https://www.youtube.com/embed/V8tIVlbOCM4" allowfullscreen loading="lazy"></iframe>
@@ -31,7 +59,7 @@
                 YouTube</a>
         </div>
 
-        <!-- VIDEO CARD 3 -->
+     VIDEO CARD 3
         <div class="video-card">
             <div class="video-thumb">
                 <iframe src="https://youtube.com/embed/l63MOpeZmP8" allowfullscreen loading="lazy"></iframe>
@@ -40,7 +68,7 @@
                 STORM WILL PASS - NEVER GIVE UP ⚡🦅</h3>
             <a class="btn-primary" href="https://youtube.com/shorts/l63MOpeZmP8" target="_blank">Watch on
                 YouTube</a>
-        </div>
+        </div> -->
 
     </div>
 </section>

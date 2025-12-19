@@ -1,0 +1,30 @@
+<?php
+
+// TUTORIALS
+class Tutorial
+{
+
+    // Get all tutorials using query
+    public static function getAll(PDO $pdo): array
+    {
+        $sql = "SELECT * FROM tutorials ORDER BY created_at DESC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+
+    //create a new tutorial 
+    public static function create(PDO $pdo, string $title, string $description, string $videoUrl)
+    {
+        // Query to db
+        $sql = "INSERT INTO tutorials (title, description, video_url)
+                VALUES (:title, :description, :video_url)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':title' => $title,
+            ':description' => $description,
+            ':video_url' => $videoUrl
+        ]);
+    }
+}

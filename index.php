@@ -8,6 +8,7 @@ require_once __DIR__ . '/app/controllers/UserController.php';
 require_once __DIR__ . '/app/models/Post.php';
 require_once __DIR__ . '/app/controllers/PostController.php';
 require_once __DIR__ . '/app/controllers/AdminController.php';
+require_once __DIR__ . '/app/controllers/TutorialController.php';
 
 
 
@@ -24,6 +25,8 @@ $map = [
     'user' => UserController::class,
     'post' => PostController::class,
     'admin' => AdminController::class,
+    'tutorial' => TutorialController::class,
+
 ];
 
 
