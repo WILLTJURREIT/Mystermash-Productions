@@ -1,5 +1,7 @@
-<?php ?>
-
+<?php
+$currentController = $_GET['controller'] ?? 'main';
+$currentAction = $_GET['action'] ?? 'index';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,14 +32,27 @@
             </a>
 
             <nav class="main-nav">
-                <a href="index.php" class="active">Home</a>
-                <a href="index.php?controller=main&action=tutorials">Tutorials</a>
-                <a href="index.php?controller=main&action=membership">Membership</a>
-                <a href="index.php?controller=main&action=about">About</a>
-                <a href="index.php?controller=main&action=contact">Contact</a>
+                <a href="index.php"
+                    class="<?= $currentController === 'main' && $currentAction === 'index' ? 'active' : '' ?>">Home</a>
+
+                <a href="index.php?controller=main&action=tutorials"
+                    class="<?= $currentController === 'main' && $currentAction === 'tutorials' ? 'active' : '' ?>">Tutorials</a>
+
+                <a href="index.php?controller=main&action=membership"
+                    class="<?= $currentController === 'main' && $currentAction === 'membership' ? 'active' : '' ?>">Membership</a>
+
+                <a href="index.php?controller=main&action=about"
+                    class="<?= $currentController === 'main' && $currentAction === 'about' ? 'active' : '' ?>">About</a>
+
+                <a href="index.php?controller=main&action=contact"
+                    class="<?= $currentController === 'main' && $currentAction === 'contact' ? 'active' : '' ?>">Contact</a>
+
                 <a href="index.php?controller=auth&action=login" class="nav-cta">Log In</a>
+
                 <?php if (isAdmin()): ?>
-                    <a href="index.php?controller=admin&action=tutorials">Admin Tutorials</a>
+                    <a href="index.php?controller=admin&action=tutorials"
+                        class="<?= $currentController === 'admin' && $currentAction === 'tutorials' ? 'active' : '' ?>">Admin
+                        Tutorials</a>
                 <?php endif; ?>
             </nav>
 

@@ -27,4 +27,17 @@ class Tutorial
             ':video_url' => $videoUrl
         ]);
     }
+
+    // Admin delete a tutorial 
+
+    public static function delete(PDO $pdo, int $id)
+    {
+        $sql = "DELETE FROM tutorials WHERE id = :id";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':id' => $id
+        ]);
+    }
+
 }

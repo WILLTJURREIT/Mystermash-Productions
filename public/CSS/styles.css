@@ -148,6 +148,7 @@ img {
 
 .main-nav a.active {
   color: var(--mm-accent-gold);
+  border-bottom: 2px solid #ffa500;
 }
 
 .main-nav a.nav-cta {

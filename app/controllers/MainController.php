@@ -24,6 +24,8 @@ class MainController
     }
     public function tutorials()
     {
+        // fetch the tutorials from database using the model
+        $tutorials = Tutorial::getAll($this->pdo);
         include __DIR__ . '/../views/main/tutorials.php';
     }
     public function membership()

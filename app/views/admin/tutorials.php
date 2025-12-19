@@ -11,8 +11,7 @@
     <div class="container">
 
         <h2>Add New Tutorial</h2>
-
-        <form method="post" action="index.php?controller=admin&action=createTutorial">
+        <form method="post" action="index.php?controller=tutorial&action=create">
 
             <div style="margin-bottom:1rem;">
                 <label>Title</label>
@@ -43,6 +42,26 @@
                 <div style="margin-bottom:1rem;">
                     <strong><?= htmlspecialchars($tutorial['title']); ?></strong><br>
                     <small><?= htmlspecialchars($tutorial['video_url']); ?></small>
+
+                    <iframe src="<?= htmlspecialchars($tutorial['video_url']); ?>" width="100%" height="225"
+                        style="max-width:400px; border-radius:10px; margin-top:0.75rem;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen loading="lazy">
+                    </iframe>
+
+
+
+                    <!--ADMIN DELETE TUTORIAL-->
+                    <form method="post" action="index.php?controller=tutorial&action=delete" style="margin-top:0.5rem;">
+
+                        <!-- this tells php which tutorial to delete -->
+                        <input type="hidden" name="id" value="<?= $tutorial['id']; ?>">
+
+                        <button class="btn-primary" style="background:#d13a24;"
+                            onclick="return confirm('Delete this tutorial?');">
+                            Delete
+                        </button>
+                    </form>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
