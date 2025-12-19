@@ -51,4 +51,19 @@ class TutorialController
         header('Location: index.php?controller=tutorial&action=admin');
         exit;
     }
+    // delete the tutorials functionality
+    public function delete(): void
+    {
+        requireAdmin();
+        $id = (int) ($_POST['id'] ?? 0);
+
+        if ($id) {
+            Tutorial::delete($this->pdo, $id);
+        }
+
+        // Redirect user back to admin tutorials page
+        header('Location: index.php?controller=admin&action=tutorials');
+        exit;
+    }
+
 }

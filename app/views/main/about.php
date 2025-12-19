@@ -1,3 +1,4 @@
+<?php include __DIR__ . '/../../../includes/header.php'; ?>
 <section class="membership-section">
     <div class="container" style="text-align:center; padding:3rem 1rem;">
 
@@ -11,3 +12,4 @@
 
     </div>
 </section>
+<?php include __DIR__ . '/../../../includes/footer.php'; ?>

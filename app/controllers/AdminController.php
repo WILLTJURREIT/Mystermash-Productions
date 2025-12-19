@@ -34,8 +34,10 @@ class AdminController
     public function tutorials(): void
     {
         requireAdmin();
+        // fetch the tutorials from the database
+        $tutorials = Tutorial::getAll($this->pdo);
 
-        // Later this will come from the db for now, this just loads the page.
+        // and pass them to the view
         include __DIR__ . '/../views/admin/tutorials.php';
     }
 
