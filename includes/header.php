@@ -18,9 +18,8 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Epunda+Sans:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet" />
-
-    <link rel="stylesheet" href="/Mystermash-Productions/public/css/styles.css" />
     <link rel="stylesheet" href="/Mystermash-Productions/public/css/animations.css" />
+    <link rel="stylesheet" href="/Mystermash-Productions/public/css/styles.css" />
 </head>
 
 <body>
@@ -38,7 +37,7 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
             <!-- logged in user display -->
             <?php if ($isLoggedIn): ?>
                 <span class="nav-user">
-                    Welcome, <?= htmlspecialchars($userName); ?>
+                    <?= htmlspecialchars($userName); ?>
                 </span>
             <?php endif; ?>
 
@@ -73,7 +72,7 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 
                 <?php if (isAdmin()): ?>
                     <a href="index.php?controller=admin&action=tutorials"
-                        class="<?= $currentController === 'admin' && $currentAction === 'tutorials' ? 'active' : '' ?>">Admin
+                        class="<?= $currentController === 'admin' && $currentAction === 'tutorials' ? 'active' : '' ?>">
                         Tutorials</a>
                 <?php endif; ?>
                 <?php if ($isLoggedIn): ?>
@@ -101,7 +100,7 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                     <!--admin dashboard link -->
                     <a href="index.php?controller=admin&action=dashboard"
                         class="<?= $currentController === 'admin' && $currentAction === 'dashboard' ? 'active' : '' ?>">
-                        Admin Dashboard
+                        Dashboard
                     </a>
                 <?php endif; ?>
 
@@ -111,5 +110,4 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
             <button class="nav-toggle">Menu</button>
         </div>
     </header>
-
     <main>

@@ -78,6 +78,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding-block: 0.6rem;
+  position: relative;
 }
 
 .logo {
@@ -170,11 +171,25 @@ img {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   .main-nav {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba(5, 3, 9, 0.98);
+    padding: 1rem;
+    border-top: 1px solid var(--mm-border-subtle);
+    z-index: 9999;
   }
-
+  .main-nav.open {
+    display: flex;
+  }
+  .main-nav a {
+    padding: 0.75rem 0;
+  }
   .nav-toggle {
     display: block;
     background: none;
@@ -185,6 +200,7 @@ img {
     font-size: 0.8rem;
   }
 }
+
 /* ===== HERO SECTION ===== */
 
 .hero {
@@ -287,7 +303,7 @@ img {
 }
 
 /* for stack the hero on small screens, side by side on larger ones */
-@media (min-width: 768px) {
+@media (min-width: 970px) {
   .hero-inner {
     flex-direction: row;
     align-items: center;
