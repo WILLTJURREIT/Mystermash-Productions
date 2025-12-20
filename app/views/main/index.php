@@ -10,8 +10,8 @@
                 people pushing to become better.
             </p>
             <div class="hero-actions">
-                <a href="membership.php" class="btn-primary">Join the Community</a>
-                <a href="videos.php" class="btn-ghost">Explore Videos</a>
+                <a href="index.php?controller=auth&action=register" class="btn-primary">Join the Community</a>
+                <a href="index.php?controller=main&action=tutorials" class="btn-ghost">Explore Videos</a>
             </div>
         </div>
 

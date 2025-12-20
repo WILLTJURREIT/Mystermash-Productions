@@ -76,6 +76,13 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                         class="<?= $currentController === 'admin' && $currentAction === 'tutorials' ? 'active' : '' ?>">Admin
                         Tutorials</a>
                 <?php endif; ?>
+                <?php if ($isLoggedIn): ?>
+                    <a href="index.php?controller=post&action=community"
+                        class="<?= $currentController === 'post' && $currentAction === 'community' ? 'active' : '' ?>">
+                        Community
+                    </a>
+                <?php endif; ?>
+
             </nav>
 
             <!-- Mobile menu button -->

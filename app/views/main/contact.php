@@ -1,15 +1,18 @@
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
-<section class="membership-section">
-    <div class="container" style="text-align:center; padding:3rem 1rem;">
-
-        <h2 style="font-size:2rem; margin-bottom:1rem;">
-            Page Under Construction.
-        </h2>
-
-        <p style="max-width:600px; margin:0 auto; font-size:1.1rem; line-height:1.6;">
+<section class="page-header">
+    <div class="container">
+        <h1>Page Under Construction.</h1>
+        <p class="page-subtext">
             This section is currently being worked on and will be available soon.
         </p>
+    </div>
+</section>
 
+<section class="membership-section">
+    <div class="container" style="text-align:center;">
+        <a href="index.php" class="btn-primary" style="margin-top:1rem;">
+            Return Home
+        </a>
     </div>
 </section>
 <?php include __DIR__ . '/../../../includes/footer.php'; ?>

@@ -34,7 +34,7 @@
                     <li>Motivational Quotes</li>
                     <li>Community Access</li>
                 </ul>
-                <a href="signup.php" class="btn-primary">Get Started</a>
+                <a href="index.php?controller=main&action=underConstruction" class="btn-primary">Get Started</a>
             </div>
             <div class="membership-card highlight">
                 <h2 class="plan-title">Standard Member</h2>
@@ -45,7 +45,7 @@
                     <li>Private Community Chat</li>
                     <li>Monthly Live Q&A</li>
                 </ul>
-                <a href="signup.php" class="btn-primary">Join Now</a>
+                <a href="index.php?controller=main&action=underConstruction" class="btn-primary">Join Now</a>
             </div>
             <div class="membership-card">
                 <h2 class="plan-title">Premium Member</h2>
@@ -56,7 +56,7 @@
                     <li>Exclusive Tutorials</li>
                     <li>Priority Support</li>
                 </ul>
-                <a href="signup.php" class="btn-primary">Go Premium</a>
+                <a href="index.php?controller=main&action=underConstruction" class="btn-primary">Go Premium</a>
             </div>
 
         </div>

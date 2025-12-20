@@ -80,6 +80,15 @@ class Post
 
         return $stmt->fetchAll();
     }
+    // ADMIN ONLY delete any post
+    public static function deleteAsAdmin(PDO $pdo, int $postId)
+    {
+        $sql = "DELETE FROM posts WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':id' => $postId
+        ]);
+    }
 
 
 }

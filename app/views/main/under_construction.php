@@ -1,4 +1,5 @@
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
+
 <section class="page-header">
     <div class="container">
         <h1>Page Under Construction.</h1>
@@ -15,4 +16,5 @@
         </a>
     </div>
 </section>
+
 <?php include __DIR__ . '/../../../includes/footer.php'; ?>

@@ -32,4 +32,9 @@ class MainController
     {
         include __DIR__ . '/../views/main/membership.php';
     }
+    public function underConstruction()
+    {
+        include __DIR__ . '/../views/main/under_construction.php';
+    }
+
 }

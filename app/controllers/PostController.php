@@ -86,5 +86,33 @@ class PostController
         exit;
     }
 
+    //COMMUNITY FEED logged in users only
+    public function community()
+    {
+        requireLogin();
+
+        // Grab all posts + author name
+        $posts = Post::getAll($this->pdo);
+
+        include __DIR__ . '/../views/main/community.php';
+    }
+
+
+    //ADMIN ONLY delete ANY users post from community feed
+    public function adminDelete()
+    {
+        requireAdmin();
+
+        $postId = (int) ($_POST['id'] ?? 0);
+
+        if ($postId) {
+            Post::deleteAsAdmin($this->pdo, $postId);
+        }
+
+        // Send admin back to the community page
+        header('Location: index.php?controller=post&action=community');
+        exit;
+    }
+
 }
 
