@@ -10,7 +10,6 @@
         </div>
     </div>
 </footer>
-<p style="color:red">FOOTER LOADED</p>
 <script src="/Mystermash-Productions/public/js/nav.js"></script>
 </body>
 
