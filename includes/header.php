@@ -82,6 +82,28 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                         Community
                     </a>
                 <?php endif; ?>
+                <?php if (isAdmin()): ?>
+                    <a href="index.php?controller=admin&action=users"
+                        class="<?= $currentController === 'admin' && $currentAction === 'users' ? 'active' : '' ?>">
+                        Manage Users
+                    </a>
+                <?php endif; ?>
+
+                <?php if ($isLoggedIn && !isAdmin()): ?>
+                    <!-- User dashboard link -->
+                    <a href="index.php?controller=user&action=dashboard"
+                        class="<?= $currentController === 'user' ? 'active' : '' ?>">
+                        Dashboard
+                    </a>
+                <?php endif; ?>
+
+                <?php if (isAdmin()): ?>
+                    <!--admin dashboard link -->
+                    <a href="index.php?controller=admin&action=dashboard"
+                        class="<?= $currentController === 'admin' && $currentAction === 'dashboard' ? 'active' : '' ?>">
+                        Admin Dashboard
+                    </a>
+                <?php endif; ?>
 
             </nav>
 

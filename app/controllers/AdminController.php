@@ -49,5 +49,44 @@ class AdminController
         exit;
     }
 
+    // manage users
+    public function users(): void
+    {
+        requireAdmin();
+
+        $users = User::getAll($this->pdo);
+        include __DIR__ . '/../views/admin/users.php';
+    }
+
+    // Disable user
+    public function disableUser(): void
+    {
+        requireAdmin();
+
+        User::disable($this->pdo, (int) $_POST['id']);
+        header('Location: index.php?controller=admin&action=users');
+        exit;
+    }
+
+    // Enable user
+    public function enableUser(): void
+    {
+        requireAdmin();
+
+        User::enable($this->pdo, (int) $_POST['id']);
+        header('Location: index.php?controller=admin&action=users');
+        exit;
+    }
+
+    // Delete user
+    public function deleteUser(): void
+    {
+        requireAdmin();
+
+        User::delete($this->pdo, (int) $_POST['id']);
+        header('Location: index.php?controller=admin&action=users');
+        exit;
+    }
+
 }
 

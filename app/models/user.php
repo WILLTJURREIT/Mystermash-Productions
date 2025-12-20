@@ -92,4 +92,29 @@ class User
 
         return $stmt->execute([$id]);
     }
+
+    // Get all users for the admin user control panel.
+    public static function getAll(PDO $pdo): array
+    {
+        $sql = "SELECT id, name, email, role, status, created_at FROM users ORDER BY created_at DESC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    // Disable users account
+    public static function disable(PDO $pdo, int $id)
+    {
+        $sql = "UPDATE users SET status = 'disabled' WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':id' => $id]);
+    }
+
+    // Enable users account
+    public static function enable(PDO $pdo, int $id)
+    {
+        $sql = "UPDATE users SET status = 'active' WHERE id = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':id' => $id]);
+    }
 }
