@@ -1,6 +1,10 @@
 <?php
 $currentController = $_GET['controller'] ?? 'main';
 $currentAction = $_GET['action'] ?? 'index';
+
+//this checks if the user is logged in, who this user is, and stores into reference.
+$isLoggedIn = isset($_SESSION['user']);
+$userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +35,13 @@ $currentAction = $_GET['action'] ?? 'index';
                 </span>
             </a>
 
+            <!-- logged in user display -->
+            <?php if ($isLoggedIn): ?>
+                <span class="nav-user">
+                    Welcome, <?= htmlspecialchars($userName); ?>
+                </span>
+            <?php endif; ?>
+
             <nav class="main-nav">
                 <a href="index.php"
                     class="<?= $currentController === 'main' && $currentAction === 'index' ? 'active' : '' ?>">Home</a>
@@ -47,7 +58,18 @@ $currentAction = $_GET['action'] ?? 'index';
                 <a href="index.php?controller=main&action=contact"
                     class="<?= $currentController === 'main' && $currentAction === 'contact' ? 'active' : '' ?>">Contact</a>
 
-                <a href="index.php?controller=auth&action=login" class="nav-cta">Log In</a>
+                <?php if ($isLoggedIn): ?>
+                    <!-- Log Out -->
+                    <a href="index.php?controller=auth&action=logout" class="nav-cta">
+                        Log Out
+                    </a>
+                <?php else: ?>
+                    <!--Log In -->
+                    <a href="index.php?controller=auth&action=login" class="nav-cta">
+                        Log In
+                    </a>
+                <?php endif; ?>
+
 
                 <?php if (isAdmin()): ?>
                     <a href="index.php?controller=admin&action=tutorials"

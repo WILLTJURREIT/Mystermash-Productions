@@ -110,6 +110,7 @@ class AuthController
     // Logout function
     public function logout()
     {
+        session_unset();
         session_destroy();
         //re direct to the home page.
         header('Location: index.php');
