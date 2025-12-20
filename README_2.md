@@ -93,9 +93,9 @@ Open command prompt and navigate to the project folder inside htdocs then run th
 
 ## Future Improvements
 
-* Responsive mobile layout
 * Admin Post approval
-* Admin/User dashboard consolidation
 * User and Admin dropdown navigation for cleaner UI
 * AI chatbot integration
 * More advanced automated testing'
+
+**Note:** Some console logs and debug markers were intentionally left in the project to help demonstrate functionality during development and presentation. These were useful for validating routing behavior, navigation responsiveness, and script loading. In a production environment, I would be removing or replacing  these with structureed logging.
