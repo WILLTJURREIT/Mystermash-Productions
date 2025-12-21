@@ -53,7 +53,7 @@
 
             <p style="margin-top:1.5rem; text-align:center;">
                 Already have an account?
-                <a href="index.php?controller=auth&action=login">
+                <a href="/mystermash-productions/auth/login">
                     Log in
                 </a>
             </p>

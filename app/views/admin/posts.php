@@ -3,7 +3,7 @@
 <main>
     <section class="page-header">
         <div class="container">
-            <h1>Admin – All Posts</h1>
+            <h1>All Posts</h1>
             <p class="page-subtext">Manage all user posts</p>
         </div>
     </section>

@@ -97,11 +97,11 @@ class AuthController
         // Store user in session
         $_SESSION['user'] = $user;
 
-        // redirect based on role of the user
+        // redirect based on role of the user (CLEAN URL'S)
         if ($user['role'] === 'admin') {
-            header('Location: index.php?controller=admin&action=dashboard');
+            header('Location: /mystermash-productions/admin/dashboard');
         } else {
-            header('Location: index.php?controller=user&action=dashboard');
+            header('Location: /mystermash-productions/user/dashboard');
         }
 
         exit;
@@ -113,7 +113,7 @@ class AuthController
         session_unset();
         session_destroy();
         //re direct to the home page.
-        header('Location: index.php');
+        header('Location: /mystermash-productions/main/home');
         exit;
     }
 

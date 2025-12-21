@@ -4,11 +4,11 @@
 <main>
     <section class="page-header">
         <div class="container">
-            <h1>Welcome Back</h1>
+            <h1>Create a Post</h1>
 
             <!--prevents XSS attacks, displays session user name, converts to special characters-->
             <p class="page-subtext">
-                <?= htmlspecialchars($_SESSION['user']['name'] . "'s" . " " . "dashboard"); ?>
+                <?= htmlspecialchars($_SESSION['user']['name']); ?>
             </p>
         </div>
     </section>
@@ -16,18 +16,10 @@
         <div class="container">
 
             <p>
-                Welcome to your dashboard.
+                Create motivational posts, build a strong community.
             </p>
 
-            <p>
-                From here, you are able to:
-            </p>
 
-            <ul>
-                <li>Create motivational posts</li>
-                <li>Upload media</li>
-                <li>Manage your own content</li>
-            </ul>
         </div>
     </section>
     <hr>

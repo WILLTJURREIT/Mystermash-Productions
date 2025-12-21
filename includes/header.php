@@ -25,7 +25,7 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 <body>
     <header class="site-header">
         <div class="container nav-wrap">
-            <a href="index.php" class="logo">
+            <a href="/mystermash-productions/main/home" class="logo">
                 <img src="/Mystermash-Productions/public/images/mystermash-logo.png
 " alt="MysterMash Productions logo" class="mm-logo-animate" />
                 <span class=" logo-text">
@@ -42,26 +42,33 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
             <?php endif; ?>
 
             <nav class="main-nav">
-                <a href="index.php"
+                <a href="/mystermash-productions/main/home"
                     class="<?= $currentController === 'main' && $currentAction === 'index' ? 'active' : '' ?>">Home</a>
 
-                <a href="index.php?controller=main&action=tutorials"
+                <a href="/mystermash-productions/main/tutorials"
                     class="<?= $currentController === 'main' && $currentAction === 'tutorials' ? 'active' : '' ?>">Tutorials</a>
 
-                <a href="index.php?controller=main&action=membership"
+                <a href="/mystermash-productions/main/membership"
                     class="<?= $currentController === 'main' && $currentAction === 'membership' ? 'active' : '' ?>">Membership</a>
 
-                <a href="index.php?controller=main&action=about"
+                <a href="/mystermash-productions/main/about"
                     class="<?= $currentController === 'main' && $currentAction === 'about' ? 'active' : '' ?>">About</a>
 
-                <a href="index.php?controller=main&action=contact"
+                <a href="/mystermash-productions/main/contact"
                     class="<?= $currentController === 'main' && $currentAction === 'contact' ? 'active' : '' ?>">Contact</a>
+
+
+
+
+                <!-- LOG IN AND OUT  -->
 
                 <?php if ($isLoggedIn): ?>
                     <!-- Log Out -->
                     <a href="index.php?controller=auth&action=logout" class="nav-cta">
                         Log Out
                     </a>
+
+
                 <?php else: ?>
                     <!--Log In -->
                     <a href="index.php?controller=auth&action=login" class="nav-cta">
@@ -70,27 +77,12 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                 <?php endif; ?>
 
 
-                <?php if (isAdmin()): ?>
-                    <a href="index.php?controller=admin&action=tutorials"
-                        class="<?= $currentController === 'admin' && $currentAction === 'tutorials' ? 'active' : '' ?>">
-                        Tutorials</a>
-                <?php endif; ?>
-                <?php if ($isLoggedIn): ?>
-                    <a href="index.php?controller=post&action=community"
-                        class="<?= $currentController === 'post' && $currentAction === 'community' ? 'active' : '' ?>">
-                        Community
-                    </a>
-                <?php endif; ?>
-                <?php if (isAdmin()): ?>
-                    <a href="index.php?controller=admin&action=users"
-                        class="<?= $currentController === 'admin' && $currentAction === 'users' ? 'active' : '' ?>">
-                        Manage Users
-                    </a>
-                <?php endif; ?>
+
+                <!-- ADMIN / USER DASHBOARDS -->
 
                 <?php if ($isLoggedIn && !isAdmin()): ?>
                     <!-- User dashboard link -->
-                    <a href="index.php?controller=user&action=dashboard"
+                    <a href="/mystermash-productions/user/dashboard"
                         class="<?= $currentController === 'user' ? 'active' : '' ?>">
                         Dashboard
                     </a>
@@ -98,7 +90,7 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 
                 <?php if (isAdmin()): ?>
                     <!--admin dashboard link -->
-                    <a href="index.php?controller=admin&action=dashboard"
+                    <a href="/mystermash-productions/admin/dashboard"
                         class="<?= $currentController === 'admin' && $currentAction === 'dashboard' ? 'active' : '' ?>">
                         Dashboard
                     </a>

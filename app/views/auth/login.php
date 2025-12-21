@@ -45,7 +45,7 @@
             <!-- registry link -->
             <p style="margin-top:1.5rem; text-align:center;">
                 Don’t have an account?
-                <a href="index.php?controller=auth&action=register">
+                <a href="/mystermash-productions/auth/register">
                     Join the community
                 </a>
             </p>

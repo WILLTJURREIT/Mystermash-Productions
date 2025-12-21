@@ -63,7 +63,11 @@ img {
 }
 
 /* Header / Navigation ===================================== */
-
+.nav-user {
+  color: #ff7b00;
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
 .site-header {
   position: sticky;
   top: 0;
@@ -423,4 +427,14 @@ img {
   .video-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.create-post {
+  width: 800px;
+  margin: auto;
+}
+
+.membership-section {
+  width: 800px;
+  margin: auto;
 }

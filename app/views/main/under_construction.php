@@ -11,7 +11,7 @@
 
 <section class="membership-section">
     <div class="container" style="text-align:center;">
-        <a href="index.php" class="btn-primary" style="margin-top:1rem;">
+        <a href="/mystermash-productions/main/home" class="btn-primary" style="margin-top:1rem;">
             Return Home
         </a>
     </div>

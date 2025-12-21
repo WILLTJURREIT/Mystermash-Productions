@@ -99,3 +99,5 @@ Open command prompt and navigate to the project folder inside htdocs then run th
 * More advanced automated testing'
 
 **Note:** Some console logs and debug markers were intentionally left in the project to help demonstrate functionality during development and presentation. These were useful for validating routing behavior, navigation responsiveness, and script loading. In a production environment, I would be removing or replacing  these with structureed logging.
+
+I noticed the URL's were long and also showing which pages, so I researched about .htaccess, and have added a file at the public level. VS Code reports syntax warnings in the .htaccess file due to language parsing, but the file executes correctly under apache and is being used for clean MVC routing.
