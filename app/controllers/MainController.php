@@ -10,6 +10,8 @@ class MainController
 
     public function home()
     {
+        // get the daily quote which can be latest or random
+        $dailyQuote = Quote::getActive($this->pdo);
         include __DIR__ . '/../views/main/index.php';
     }
 

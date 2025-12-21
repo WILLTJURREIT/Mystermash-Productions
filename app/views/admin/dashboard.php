@@ -19,7 +19,7 @@
     <div class="admin-tools">
         <a href="/mystermash-productions/admin/users" class="btn-primary">Manage Users</a>
         <a href="/mystermash-productions/post/community" class="btn-primary">Manage Community</a>
-        <span class="btn-disabled">Manage Quotes</span>
+        <a href="/mystermash-productions/admin/quotes" class="btn-primary">Manage Quotes</a>
     </div>
 </section>
 
@@ -49,38 +49,45 @@
     <h2>Your Posts</h2>
 
     <?php if (empty($posts)): ?>
-        <p>You haven not posted anything yet.</p>
+        <p>No community posts yet.</p>
     <?php else: ?>
         <?php foreach ($posts as $post): ?>
-            <div style="margin-bottom:1.5rem;">
+            <div style="margin-bottom:1.5rem; padding:1rem; border:1px solid rgba(255,255,255,0.15); border-radius:12px;">
+
+                <!--Post title -->
                 <h3><?= htmlspecialchars($post['title']); ?></h3>
+
+                <!-- Post content-->
                 <p><?= nl2br(htmlspecialchars($post['content'])); ?></p>
-                <small>Posted on <?= $post['created_at']; ?></small>
 
-                <!--  EDIT and DELETE controls for the posts -->
-                <form method="post" action="index.php?controller=post&action=update" style="margin-top:0.75rem;">
+                <small>
+                    Posted by <?= htmlspecialchars($post['author']); ?> on <?= htmlspecialchars($post['created_at']); ?>
+                </small>
 
-                    <!-- the required tells PHP which post is being updated -->
-                    <input type="hidden" name="id" value="<?= $post['id']; ?>">
+                <!--ADMIN -TOOL -->
+                <?php if (isAdmin()): ?>
+                    <form method="post" action="index.php?controller=post&action=update" style="margin-top:0.75rem;">
+                        <input type="hidden" name="id" value="<?= (int) $post['id']; ?>">
 
-                    <!-- edit the title -->
-                    <div style="margin-bottom:0.5rem;">
-                        <input type="text" name="title" value="<?= htmlspecialchars($post['title']); ?>" required
-                            style="width:100%;">
-                    </div>
+                        <div style="margin-bottom:0.5rem;">
+                            <input type="text" name="title" value="<?= htmlspecialchars($post['title']); ?>" required
+                                style="width:100%;">
+                        </div>
 
-                    <!-- edit the content-->
-                    <div style="margin-bottom:0.5rem;">
-                        <textarea name="content" rows="3" required
-                            style="width:100%;"><?= htmlspecialchars($post['content']); ?></textarea>
-                    </div>
-                    <button class="btn-primary">Update</button>
-                    <!-- delete link-->
-                    <a href="index.php?controller=post&action=delete&id=<?= $post['id']; ?>"
-                        onclick="return confirm('Delete this post?');" style="margin-left:1rem; color:#d13a24;">
-                        Delete
-                    </a>
-                </form>
+                        <div style="margin-bottom:0.5rem;">
+                            <textarea name="content" rows="3" required
+                                style="width:100%;"><?= htmlspecialchars($post['content']); ?></textarea>
+                        </div>
+
+                        <button class="btn-primary">Update</button>
+
+                        <a href="index.php?controller=post&action=delete&id=<?= (int) $post['id']; ?>"
+                            onclick="return confirm('Delete this post?');" style="margin-left:1rem; color:#d13a24;">
+                            Delete
+                        </a>
+                    </form>
+                <?php endif; ?>
+
             </div>
         <?php endforeach; ?>
     <?php endif; ?>

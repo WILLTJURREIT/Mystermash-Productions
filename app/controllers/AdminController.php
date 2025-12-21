@@ -18,6 +18,8 @@ class AdminController
     public function dashboard()
     {
         requireAdmin();
+        // fetch all posts from admin
+        $posts = Post::getByUser($this->pdo, $_SESSION['user']['id']);
         // echo "AdminController is working";
         include __DIR__ . '/../views/admin/dashboard.php';
     }
@@ -87,6 +89,77 @@ class AdminController
         header('Location: index.php?controller=admin&action=users');
         exit;
     }
+
+
+
+
+
+    // QUOTES LOGIC
+    public function quotes()
+    {
+        requireAdmin();
+
+        $quotes = Quote::getAll($this->pdo);
+
+        include __DIR__ . '/../views/admin/quotes.php';
+    }
+
+    public function createQuote()
+    {
+        requireAdmin();
+
+        $quoteText = trim($_POST['quote_text'] ?? '');
+        $author = trim($_POST['author'] ?? '');
+
+        if (!$quoteText) {
+            $_SESSION['flash'] = "Quote text is required.";
+            header("Location: /mystermash-productions/admin/quotes");
+            exit;
+        }
+
+        Quote::create($this->pdo, $quoteText, $author ?: null);
+
+        header("Location: /mystermash-productions/admin/quotes");
+        exit;
+    }
+
+    public function deleteQuote()
+    {
+        requireAdmin();
+
+        $id = (int) ($_POST['id'] ?? 0);
+
+        if ($id) {
+            Quote::delete($this->pdo, $id);
+        }
+
+        header("Location: /mystermash-productions/admin/quotes");
+        exit;
+    }
+
+    public function activateQuote()
+    {
+        requireAdmin();
+
+        $id = (int) ($_POST['id'] ?? 0);
+
+        if (!$id) {
+            $_SESSION['flash'] = "Invalid quote.";
+            header("Location: /mystermash-productions/admin/quotes");
+            exit;
+        }
+
+        // Deactivate all quotes first
+        Quote::deactivateAll($this->pdo);
+
+        // Activate selected quote
+        Quote::activate($this->pdo, $id);
+
+        $_SESSION['flash'] = "";
+        header("Location: /mystermash-productions/admin/quotes");
+        exit;
+    }
+
 
 }
 

@@ -15,10 +15,10 @@ class AuthController
 
 
 
-    // Show login page (I will need to still add this view since I have not created one yet)
+    // Show login page 
     public function login()
     {
-        echo "<script>alert('Login controller reached');</script>";
+        // echo "<script>alert('Login controller reached');</script>";
         include __DIR__ . '/../views/auth/login.php';
     }
 

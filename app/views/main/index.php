@@ -4,7 +4,7 @@
     <div class="container hero-inner">
         <div class="hero-text">
             <p class="hero-kicker">Create • Inspire • Grow</p>
-            <h1>Welcome to MysterMash Productions</h1>
+            <h1>MysterMash Productions</h1>
             <p class="hero-subtitle">
                 A central hub for motivational content, behind-the-scenes ideas, and a growing community of
                 people pushing to become better.
@@ -16,12 +16,29 @@
         </div>
 
         <div class="hero-side">
-            <div class="hero-card">
-                <p class="hero-card-label">Daily Quote</p>
+            <!-- CHARACTER IMAGE -->
+            <div class="hero-character"></div>
+            <!-- QUOTE CARD -->
+        </div>
+        <div class="hero-card">
+            <p class="hero-card-label">Daily Quote</p>
+
+            <?php if (!empty($dailyQuote)): ?>
                 <p class="hero-card-quote">
-                    “Stay consistent. Small steps every day stack up into big wins.”
+                    “<?= htmlspecialchars($dailyQuote['quote_text']); ?>”
+                    <?php if (!empty($dailyQuote['author'])): ?>
+                        <br>
+                        <span style="color: var(--mm-text-muted);">
+                            — <?= htmlspecialchars($dailyQuote['author']); ?>
+                        </span>
+                    <?php endif; ?>
                 </p>
-            </div>
+            <?php else: ?>
+                <p class="hero-card-quote">
+                    No quote yet. Admin can add one.
+                </p>
+            <?php endif; ?>
+
         </div>
     </div>
 </section>

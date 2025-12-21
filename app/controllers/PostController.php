@@ -34,11 +34,14 @@ class PostController
             $content
         );
 
-        // redirect the user back to dashboard
-        header('Location: index.php?controller=user&action=dashboard');
-        exit;
+        // redirect specific the user back to dashboard
+        if (isAdmin()) {
+            header('Location: /mystermash-productions/admin/dashboard');
+        } else {
+            header('Location: index.php?controller=user&action=dashboard');
+            exit;
+        }
     }
-
     // update a post
     public function update()
     {

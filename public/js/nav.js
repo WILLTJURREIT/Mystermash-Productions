@@ -1,5 +1,7 @@
+"use strict";
+
 console.log("nav.js FILE LOADED");
-alert("nav.js loaded");
+// alert("nav.js loaded");
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM ready");
   const toggle = document.querySelector(".nav-toggle");

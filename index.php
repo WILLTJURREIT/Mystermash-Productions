@@ -10,6 +10,7 @@ require_once __DIR__ . '/app/controllers/PostController.php';
 require_once __DIR__ . '/app/controllers/AdminController.php';
 require_once __DIR__ . '/app/controllers/TutorialController.php';
 require_once __DIR__ . "/app/models/Tutorial.php";
+require_once __DIR__ . '/app/models/Quote.php';
 
 
 

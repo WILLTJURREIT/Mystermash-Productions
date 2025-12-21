@@ -76,9 +76,15 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                     </a>
                 <?php endif; ?>
 
-
+                <?php if ($isLoggedIn): ?>
+                    <a href="/mystermash-productions/post/community"
+                        class="<?= $currentController === 'post' && $currentAction === 'community' ? 'active' : '' ?>">
+                        Community
+                    </a>
+                <?php endif; ?>
 
                 <!-- ADMIN / USER DASHBOARDS -->
+
 
                 <?php if ($isLoggedIn && !isAdmin()): ?>
                     <!-- User dashboard link -->

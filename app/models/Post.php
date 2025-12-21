@@ -22,9 +22,11 @@ class Post
     // Get all posts from a user
     public static function getByUser(PDO $pdo, int $userId): array
     {
-        $sql = "SELECT * FROM posts
-                WHERE user_id = :user_id
-                ORDER BY created_at DESC";
+        $sql = "SELECT posts.*, users.name AS author
+        FROM posts
+        JOIN users ON posts.user_id = users.id
+        WHERE posts.user_id = :user_id
+        ORDER BY posts.created_at DESC";
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -80,7 +82,7 @@ class Post
 
         return $stmt->fetchAll();
     }
-    // ADMIN ONLY delete any post
+    // ADMIN ONLY delete any post no user_id check
     public static function deleteAsAdmin(PDO $pdo, int $postId)
     {
         $sql = "DELETE FROM posts WHERE id = :id";

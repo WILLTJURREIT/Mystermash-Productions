@@ -438,3 +438,76 @@ img {
   width: 800px;
   margin: auto;
 }
+
+.admin-tools {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 4rem 0 6rem;
+}
+
+.admin-tools .btn-primary {
+  min-width: 160px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .create-post {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .membership-section {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .admin-tools {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 3rem 0 5rem;
+  }
+
+  .admin-tools .btn-primary {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+}
+
+/* USER DASHBOARD / CREATE POSTS */
+.user-create-post {
+  width: 100%;
+  max-width: 800px;
+  margin: 4rem auto;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .user-create-post {
+    max-width: 360px;
+    padding: 0 1rem;
+  }
+}
+
+/*MAIN PAGE MASKED IMAGE*/
+.hero-quote-wrap {
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Masked character */
+.hero-character {
+  width: 220px;
+  height: 420px;
+  margin: 3rem;
+
+  background-image: url("/Mystermash-Productions/public/images/Skeleton-boss-coffee-mask.png");
+  background-size: cover;
+  background-position: center;
+}
