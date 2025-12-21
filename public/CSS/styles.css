@@ -495,12 +495,6 @@ img {
   }
 }
 
-/*MAIN PAGE MASKED IMAGE*/
-.hero-quote-wrap {
-  align-items: center;
-  gap: 2rem;
-}
-
 /* Masked character */
 .hero-character {
   width: 220px;
@@ -509,5 +503,6 @@ img {
 
   background-image: url("/Mystermash-Productions/public/images/Skeleton-boss-coffee-mask.png");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
