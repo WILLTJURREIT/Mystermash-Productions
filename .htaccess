@@ -1,7 +1,16 @@
+# Enable Apache rewrite engine for clean URLs
 RewriteEngine On
+
+# Base directory of the project inside htdocs
 RewriteBase /mystermash-productions/
 
+
+# Ignore real files (CSS, JS, images, etc.)
 RewriteCond %{REQUEST_FILENAME} !-f
+
+# Ignore real directories
 RewriteCond %{REQUEST_FILENAME} !-d
 
+# Route the URLs like /controller/action to index.php
+# for example: /admin/dashboard to index.php?controller=admin&action=dashboard
 RewriteRule ^([^/]+)/([^/]+)/?$ index.php?controller=$1&action=$2 [L,QSA]

@@ -1,5 +1,8 @@
 <?php
-// This user controller handles pages that need a logged in user, right now, this is only the dashboard later on, it will handle posts, profile, and more...
+// This user controller handles pages that need a logged in user
+
+
+// User dashboard accessible only to logged in users, that displays and manages posts created by the current user
 
 class UserController
 {

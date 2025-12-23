@@ -1,3 +1,6 @@
+<!--Public Tutorials Page where the Tutorials are pulled dynamically from the database and displayed in a responsive grid -->
+
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 <section class="page-header">
     <div class="container">
@@ -9,6 +12,8 @@
 <!-- VIDEO GRID (I kept the same grid layout and replaced the hard-coded video cards with a loop that pulls tutorials from the database.)-->
 <section class="videos-section">
     <div class="container video-grid">
+
+        <!-- Loop through tutorials retrieved from the database -->
         <?php if (!empty($tutorials)): ?>
             <?php foreach ($tutorials as $tutorial): ?>
                 <div class="video-card">

@@ -1,3 +1,5 @@
+<!-- Membership Page - This is a Static ui mockup demonstrating layout, design, and navigation, No payment functionality has been added -->
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">

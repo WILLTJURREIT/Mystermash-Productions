@@ -1,6 +1,6 @@
 <?php
 
-// The User model represents the users table in the database, and it handles all the database interactions related to users. the controllers will call these methods instead of writing SQL directly, this is part of the MVC structure and helps keep the code secure  and clean. 
+// The User model represents the users table in the database, and it handles authentication, registration, and admin user management. the controllers will call these methods instead of writing SQL directly, this is part of the MVC structure and helps keep the code secure  and clean. 
 
 class User
 {
@@ -30,7 +30,7 @@ class User
 
 
 
-    // Create or register a new user, password is hashed for security then returns the new users id
+    // Create or register a new user account, password is hashed for security before being stored int he db then returns the new users id
     public static function create(
         PDO $pdo,
         string $name,
@@ -69,7 +69,7 @@ class User
     }
 
 
-    // Update a users status for admin only and allows enabling and disabling user accounts
+    // Update a users account status for admin only and allows enabling and disabling user accounts, used by the admin for controlling the access
     public static function setStatus(
         PDO $pdo,
         int $id,
@@ -102,7 +102,7 @@ class User
         return $stmt->fetchAll();
     }
 
-    // Disable users account
+    // Disable users account, used by the admin 
     public static function disable(PDO $pdo, int $id)
     {
         $sql = "UPDATE users SET status = 'disabled' WHERE id = :id";
@@ -110,7 +110,7 @@ class User
         $stmt->execute([':id' => $id]);
     }
 
-    // Enable users account
+    // Enable users account, used by the admin
     public static function enable(PDO $pdo, int $id)
     {
         $sql = "UPDATE users SET status = 'active' WHERE id = :id";

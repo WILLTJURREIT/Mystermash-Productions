@@ -1,6 +1,6 @@
 <?php
 
-// AdminController handles admin functionality.
+// AdminController handles all admin functionality, like managing users, posts, tutorials, and daily quotes.
 class AdminController
 {
     private PDO $pdo;
@@ -91,9 +91,6 @@ class AdminController
     }
 
 
-
-
-
     // QUOTES LOGIC
     public function quotes()
     {
@@ -149,10 +146,10 @@ class AdminController
             exit;
         }
 
-        // Deactivate all quotes first
+        // Deactivate all quotes first so only one can be active at a time
         Quote::deactivateAll($this->pdo);
 
-        // Activate selected quote
+        // Activate selected quote as the current daily quote
         Quote::activate($this->pdo, $id);
 
         $_SESSION['flash'] = "";

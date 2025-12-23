@@ -1,7 +1,6 @@
 <?php
 
-// TutorialController that handles tutorial requests 
-
+// TutorialController that handles display for users and tutorial management for admins
 class TutorialController
 {
     private PDO $pdo;
@@ -29,6 +28,7 @@ class TutorialController
 
         $tutorials = Tutorial::getAll($this->pdo);
 
+        //admin only tutorial management views
         include __DIR__ . '/../views/admin/tutorials.php';
     }
     // Handle admin tutorial creation in the site

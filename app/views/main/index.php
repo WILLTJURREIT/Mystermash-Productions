@@ -1,3 +1,6 @@
+<!-- This Home Page Displays the main landing content and the currently active daily quote.The quote is selected and passed in from MainController -->
+
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 <section class="hero">
@@ -22,6 +25,7 @@
         </div>
         <div class="hero-card">
             <p class="hero-card-label">Daily Quote</p>
+            <!--Display the currently active quote, and the output is sanitized to prevent attacks-->
 
             <?php if (!empty($dailyQuote)): ?>
                 <p class="hero-card-quote">

@@ -1,3 +1,7 @@
+<!-- 
+ This is the quote Management Page where admin can create, delete, and select which quote is displayed on the main homepage
+-->
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 <section class="page-header">
@@ -17,6 +21,8 @@
             </p>
         <?php endif; ?>
 
+
+        <!-- Form to create a new quote-->
         <h2>Add a Quote</h2>
 
         <form method="post" action="/mystermash-productions/admin/createQuote" style="margin-bottom: 2rem;">
@@ -32,6 +38,9 @@
 
             <button class="btn-primary" type="submit">Save Quote</button>
         </form>
+
+
+        <!-- This is al ist of all quotes in the system where the admin can delete quotes or set one as the active homepage quote-->
 
         <h2>Existing Quotes</h2>
 

@@ -1,3 +1,5 @@
+// This file was created to assist with the navigation in mobile. and I have intentionally left my  debugging, to show some of my struggles, I had to overcome. 
+
 "use strict";
 
 console.log("nav.js FILE LOADED");

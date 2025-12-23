@@ -1,8 +1,9 @@
 <?php
+// Determine the current route to highlight active navigation links
 $currentController = $_GET['controller'] ?? 'main';
 $currentAction = $_GET['action'] ?? 'index';
 
-//this checks if the user is logged in, who this user is, and stores into reference.
+//this checks if the user is in the logged in "state", who this user is, and stores into reference safely.
 $isLoggedIn = isset($_SESSION['user']);
 $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 ?>
@@ -41,6 +42,8 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                 </span>
             <?php endif; ?>
 
+
+            <!-- Navigation adapts based on authentication state and user role -->
             <nav class="main-nav">
                 <a href="/mystermash-productions/main/home"
                     class="<?= $currentController === 'main' && $currentAction === 'index' ? 'active' : '' ?>">Home</a>
@@ -61,7 +64,6 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
 
 
                 <!-- LOG IN AND OUT  -->
-
                 <?php if ($isLoggedIn): ?>
                     <!-- Log Out -->
                     <a href="index.php?controller=auth&action=logout" class="nav-cta">
@@ -83,9 +85,9 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                     </a>
                 <?php endif; ?>
 
+
+
                 <!-- ADMIN / USER DASHBOARDS -->
-
-
                 <?php if ($isLoggedIn && !isAdmin()): ?>
                     <!-- User dashboard link -->
                     <a href="/mystermash-productions/user/dashboard"
@@ -101,8 +103,9 @@ $userName = $isLoggedIn ? $_SESSION['user']['name'] : null;
                         Dashboard
                     </a>
                 <?php endif; ?>
-
             </nav>
+
+
 
             <!-- Mobile menu button -->
             <button class="nav-toggle">Menu</button>

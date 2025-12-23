@@ -1,8 +1,8 @@
 <?php
-
+// starts the session, this is used for the authentication process.
 session_start();
 
-// check if a user is logged  in
+// check if a user is logged in, this is used throughout this app to protect authenticated routes.
 function isLoggedIn()
 {
     return isset($_SESSION['user']);
@@ -18,7 +18,7 @@ function isAdmin()
 
 
 
-// force the logging for protected pages, this function will redirect the user to the log in page. 
+// force the authentication for protected pages, this function will redirect the user to the log in page. 
 function requireLogin()
 {
     if (!isLoggedIn()) {

@@ -1,5 +1,5 @@
 <?php
-//I wrote a basic PHP test script to validate that my User model behaves correctly when querying the database
+//I wrote a basic PHP test script to validate that my User model behaves correctly when querying the database, and correctly handles the missing records.
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../app/models/User.php';
 

@@ -1,3 +1,5 @@
+<!-- Admin tutorial management page -->
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 <section class="page-header">
@@ -10,6 +12,7 @@
 <section class="membership-section">
     <div class="container">
 
+        <!-- Admin form to add new tutorial videos -->
         <h2>Add New Tutorial</h2>
         <form method="post" action="index.php?controller=tutorial&action=create">
 
@@ -33,6 +36,8 @@
 
         <hr>
 
+
+        <!-- Display existing tutorials with embedded videos from youtube -->
         <h2>Existing Tutorials</h2>
 
         <?php if (empty($tutorials)): ?>

@@ -1,6 +1,7 @@
 <?php
 
-// This file is the post model which is responsible for the database operations that are related to posts.
+// This file is the post model which is responsible for all the database operations that are related to posts.
+// Controllers call these methods instead of writing SQL directly,  this keeps the code organized and secure and follows theMVC structure.
 
 class Post
 {
@@ -19,7 +20,7 @@ class Post
             ':content' => $content,
         ]);
     }
-    // Get all posts from a user
+    //fetch all posts created by a user a user this is used for user and admin dashboards to show only their own posts.
     public static function getByUser(PDO $pdo, int $userId): array
     {
         $sql = "SELECT posts.*, users.name AS author
@@ -67,7 +68,7 @@ class Post
         ]);
     }
 
-    // Get all of the posts for admin use only
+    // fetch all of the posts and the authors name, used for the community feed and admin moderation.
     public static function getAll(PDO $pdo): array
     {
         $sql = "
@@ -82,7 +83,7 @@ class Post
 
         return $stmt->fetchAll();
     }
-    // ADMIN ONLY delete any post no user_id check
+    // ADMIN ONLY delete any post no user_id check so it bypasses user ownership checks. This is used for managing the community posts
     public static function deleteAsAdmin(PDO $pdo, int $postId)
     {
         $sql = "DELETE FROM posts WHERE id = :id";

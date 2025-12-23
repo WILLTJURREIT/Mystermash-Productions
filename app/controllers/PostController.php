@@ -1,5 +1,5 @@
 <?php
-// PostController handles the post related users actions
+// PostController handles the post related actions including creation,updates, deletion, and the community feed
 class PostController
 {
     private PDO $pdo;
@@ -15,7 +15,7 @@ class PostController
     {
         requireLogin();
 
-        // here trim input for safety
+        // here trim input for safety to prevent accidental whitespace and basic injection issues
         $title = trim($_POST['title'] ?? '');
         $content = trim($_POST['content'] ?? '');
 
@@ -34,7 +34,7 @@ class PostController
             $content
         );
 
-        // redirect specific the user back to dashboard
+        // redirect based on role so admins remain on the admin dashboard
         if (isAdmin()) {
             header('Location: /mystermash-productions/admin/dashboard');
         } else {

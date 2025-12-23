@@ -1,3 +1,4 @@
+<!-- Static placeholder page, this page is to make the site feel and look complete, and was an effort to enhance the user experience-->
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 <section class="page-header">

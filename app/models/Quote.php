@@ -1,5 +1,5 @@
 <?php
-
+// Handles all database logic for daily quotes the admin can create, delete, and select which quote is shown on the homepage,and is active or not. 
 class Quote
 {
     // Get all quotes (for admin list)
@@ -41,6 +41,9 @@ class Quote
         $quote = $stmt->fetch(PDO::FETCH_ASSOC);
         return $quote ?: null;
     }
+
+    // Returns the active quote and  only one quote should be active at a time and displayed on the homepage
+
     public static function getActive(PDO $pdo)
     {
         $stmt = $pdo->prepare(
@@ -50,12 +53,15 @@ class Quote
         return $stmt->fetch();
     }
 
+    // deactivates all quotes so only one can be active at a time, it ensures a single current daily quote.
     public static function deactivateAll(PDO $pdo)
     {
         $sql = "UPDATE quotes SET is_active = 0";
         $pdo->exec($sql);
     }
 
+
+    // this sets the selected quote as the active daily quote.
     public static function activate(PDO $pdo, int $id)
     {
         $sql = "UPDATE quotes SET is_active = 1 WHERE id = :id";

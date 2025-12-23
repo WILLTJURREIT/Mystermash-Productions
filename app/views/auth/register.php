@@ -1,6 +1,5 @@
-<?php
-// registering view that displays the user registration form, and all validation and logic will happen in AuthController::doRegister().
-?>
+<!--Registering view that displays the user registration form, and all validation and account creation logic is handled in AuthController::doRegister()-->
+
 
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
@@ -17,7 +16,10 @@
     <section class="membership-section">
         <div class="container" style="max-width: 420px;">
 
+
             <?php
+            // Flash message used to display registration errors or feedback.
+            
             if (!empty($_SESSION['flash'])):
                 ?>
                 <p style="color:#ff7b00; margin-bottom:1rem;">
@@ -26,6 +28,8 @@
                 <?php unset($_SESSION['flash']); ?>
             <?php endif; ?>
 
+
+            <!-- User registration form -->
             <form method="post" action="index.php?controller=auth&action=doRegister">
 
 

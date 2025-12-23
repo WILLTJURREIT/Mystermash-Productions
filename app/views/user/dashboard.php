@@ -1,4 +1,4 @@
-<!-- This page is the User dashboard view if the user session exists, the access control is done in UserController, not with this page. -->
+<!-- This page is the User dashboard view if authenticated, and if the user session exists, the access control is handled in UserController,using requireLogin() and not with this page. -->
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 <main>
@@ -6,7 +6,7 @@
         <div class="container">
             <h1>Create a Post</h1>
 
-            <!--prevents XSS attacks, displays session user name, converts to special characters-->
+            <!--prevents XSS attacks, displays session user name, converts to special characters, note: I have intentionally left this to show my understanding of this code. I was dynamically displaying the users name but it because redundant one I displayed the user and admin names on the header-->
             <!-- <p class="page-subtext">
               // htmlspecialchars($_SESSION['user']['name']); 
             </p> -->
@@ -50,8 +50,10 @@
 
         <hr>
 
+        <!-- Display all posts created by the logged-in user, the posts are fetched in UserController and passed to this view -->
         <h2>Your Posts</h2>
 
+        <!-- Form submits to PostController::create(), validation and database logic are handled in the controller -->
         <?php if (empty($posts)): ?>
             <p>You haven not posted anything yet.</p>
         <?php else: ?>

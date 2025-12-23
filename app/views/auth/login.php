@@ -1,3 +1,5 @@
+<!--Login Page, this form submits the credentials to AuthController::authenticate() function for validation and password verification which are handled  in the server side-->
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 <!-- The form submits data to AuthController::authenticate() -->
 <main>
@@ -15,7 +17,7 @@
         <div class="container" style="max-width: 420px;">
 
             <?php
-            // Flash Message Display which is used to show login errors or system messages.
+            // Flash Message is used to display the login errors or system messages.
             // Messages are set in AuthController and cleared after display.
             if (!empty($_SESSION['flash'])):
                 ?>

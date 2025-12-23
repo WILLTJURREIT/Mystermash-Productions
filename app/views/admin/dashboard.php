@@ -1,7 +1,9 @@
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 
-<!-- ADMIN DASHBOARD-->
+<!-- ADMIN DASHBOARD, this page is only accessible to admin.
+ The access control is handled in AdminController using requireAdmin() which is created in the includes/auth.php
+-->
 
 
 <section class="page-header">
@@ -13,6 +15,7 @@
     </div>
 </section>
 
+<!-- links for admin access to admin tools -->
 <section class="membership-section">
     <h2>Admin Tools</h2>
 
@@ -24,8 +27,7 @@
 </section>
 
 
-<!-- CREATE A POST SECTION -->
-
+<!-- CREATE A POST SECTION - for the admin to create post that will also appear int he community feed-->
 <section class="create-post">
     <h2>Create a Post</h2>
 
@@ -45,7 +47,8 @@
     </form>
 
     <hr>
-
+    <!-- display posts created by admin, and can update or delete the posts from here
+-->
     <h2>Your Posts</h2>
 
     <?php if (empty($posts)): ?>

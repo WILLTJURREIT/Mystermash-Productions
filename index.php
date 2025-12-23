@@ -1,3 +1,4 @@
+<!-- This is the front controller for the application where All requests are routed through this file using .htaccess -->
 <?php
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/auth.php';
@@ -14,14 +15,12 @@ require_once __DIR__ . '/app/models/Quote.php';
 
 
 
-
-
 $controller = $_GET['controller'] ?? 'main';
 $action = $_GET['action'] ?? 'home';
 
 
 
-
+// This Maps the URL controller names to their matching controller classes, this prevents direct file access and keeps the routing centralized.
 $map = [
     'main' => MainController::class,
     'auth' => AuthController::class,
@@ -32,7 +31,7 @@ $map = [
 
 ];
 
-
+// If the requested controller does not exist, return a 404 response
 if (!isset($map[$controller])) {
     http_response_code(404);
     echo 'Not found';
@@ -40,7 +39,7 @@ if (!isset($map[$controller])) {
 }
 $instance = new $map[$controller]($pdo);
 
-
+// If the requested action does not exist on the controller, return a 404 response
 if (!method_exists($instance, $action)) {
     http_response_code(404);
     echo 'Action not found';
@@ -50,5 +49,6 @@ if (!method_exists($instance, $action)) {
 
 
 
-// Render the action
+// Render the action, execute the requested controller action
+
 $instance->$action();

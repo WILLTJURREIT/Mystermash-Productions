@@ -1,4 +1,4 @@
-/*  MYSTERMASH LOGO LOAD ANIMATION (FLIP + FLASH FROM CSS PROJECT) ====================== */
+/* MYSTERMASH LOGO Intro Animation This animation is used on page load to give the brand a dramatic entrance and establish visual identity. Inspired by earlier CSS animation coursework*/
 
 @keyframes mmLogoFlipFlash {
   0% {
@@ -29,7 +29,7 @@
     box-shadow: none;
   }
 }
-
+/* Applied to the site logo on initial page load */
 .mm-logo-animate {
   display: inline-block;
   animation: mmLogoFlipFlash 1.1s ease-out forwards;

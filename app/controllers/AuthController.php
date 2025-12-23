@@ -37,7 +37,7 @@ class AuthController
     {
         $_SESSION['flash'] = 'doRegister() has been called';
 
-        // Trims input to remove extra whitespace
+        // Trims input to remove extra whitespace and make email normal format
         $name = trim($_POST['name'] ?? '');
         $email = strtolower(trim($_POST['email'] ?? ''));
         $pass = $_POST['password'] ?? '';
@@ -55,7 +55,7 @@ class AuthController
             header('Location: index.php?controller=auth&action=register');
             exit;
         }
-
+        // Password hashing is handled inside the User model using password_hash()
         // Create the user using the model
         $userId = User::create(
             $this->pdo,
@@ -73,7 +73,8 @@ class AuthController
     }
 
 
-    // Handle login 
+    // Handle login / verify credentials, password hash, and ensure the account status is active before logging the user in.
+
 
     public function authenticate()
     {   // change to lowercase, trim,  using the post method, and store into a reference. 
@@ -107,7 +108,8 @@ class AuthController
         exit;
     }
 
-    // Logout function
+    // Logout function / destroy session and redirect user back to the home page
+
     public function logout()
     {
         session_unset();

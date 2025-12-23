@@ -1,3 +1,4 @@
+<!-- Global footer included across all pages -->
 </main>
 
 <footer class="site-footer">

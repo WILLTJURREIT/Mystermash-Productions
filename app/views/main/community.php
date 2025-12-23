@@ -1,3 +1,6 @@
+<!-- Community Feed Displays all community posts pulled from the database the admin can delete posts directly from this page-->
+
+
 <?php include __DIR__ . '/../../../includes/header.php'; ?>
 
 <section class="page-header">
@@ -12,6 +15,7 @@
 
         <h2>Latest Community Posts</h2>
 
+        // Loop through community posts retrieved in PostController::community()
         <?php if (empty($posts)): ?>
             <p>No community posts yet.</p>
         <?php else: ?>
@@ -28,7 +32,7 @@
                         Posted by <?= htmlspecialchars($post['author']); ?> on <?= htmlspecialchars($post['created_at']); ?>
                     </small>
 
-                    <!--ADMIN -TOOL -->
+                    <!--ADMIN  ONLY - DELETE TOOL -->
                     <?php if (isAdmin()): ?>
                         <form method="post" action="index.php?controller=post&action=adminDelete" style="margin-top:0.75rem;">
                             <input type="hidden" name="id" value="<?= (int) $post['id']; ?>">
