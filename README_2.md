@@ -82,6 +82,7 @@
 * Open a web browser and go to phpMyAdmin
 * Create a new database called mystermash_productions
 * Import the provided SQL database dump file into the new database
+  **(Navigate to the Import tab in phpMyAdmin, then select the file located at mystermash-productions/database_dump/mystermash_productions.sql, select and click on import)**
 * Open the database.php file inside the config folder
 * Make sure the database name, username, and password match your local MySQL setup
 * Open a browser and navigate to [http://localhost/Mystermash-Productions](http://localhost/Mystermash-Productions)
